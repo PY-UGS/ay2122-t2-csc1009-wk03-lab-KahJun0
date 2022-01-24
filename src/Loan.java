@@ -6,17 +6,18 @@ public class Loan {
     private double loanAmount;
     private java.util.Date loanDate;
 
-    public Loan(double annualIR, int noYrs, double loanAmt){
+    public Loan(double annualIR, int noYrs, double loanAmt) {
         this.annualInterestRate = annualIR;
         this.numberOfYears = noYrs;
         this.loanAmount = loanAmt;
+        this.loanDate = new java.util.Date();
     }
 
-    public double getAnnualInterestRate(){
+    public double getAnnualInterestRate() {
         return annualInterestRate;
     }
 
-    public int getNumberOfYears(){
+    public int getNumberOfYears() {
         return numberOfYears;
     }
 
@@ -24,29 +25,29 @@ public class Loan {
         return loanAmount;
     }
 
-    public java.util.Date getLoanDate(){
+    public java.util.Date getLoanDate() {
         return loanDate;
     }
 
-    public void setAnnualInterestRate(double interestRate){
+    public void setAnnualInterestRate(double interestRate) {
         this.annualInterestRate = interestRate;
     }
 
-    public void setNumberOfYears(int numberOfYears){
+    public void setNumberOfYears(int numberOfYears) {
         this.numberOfYears = numberOfYears;
     }
 
-    public void setLoanAmount(double loanAmount){
+    public void setLoanAmount(double loanAmount) {
         this.loanAmount = loanAmount;
     }
 
-    public double getMonthlyPayment(){
-        double monthlyInterestRate = this.annualInterestRate/12;
-        return ((this.loanAmount*monthlyInterestRate)/(1-(1/Math.pow((1+monthlyInterestRate),this.numberOfYears*12))))/12;
+    public double getMonthlyPayment() {
+        double monthlyInterestRate = this.annualInterestRate / 12;
+        return ((this.loanAmount * monthlyInterestRate) / (1 - (1 / Math.pow((1 + monthlyInterestRate), this.numberOfYears * 12)))) / 12;
     }
 
-    public double getTotalPayment(){
-        return getMonthlyPayment()*this.numberOfYears*12;
+    public double getTotalPayment() {
+        return getMonthlyPayment() * this.numberOfYears * 12;
     }
 }
 
