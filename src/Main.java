@@ -13,9 +13,9 @@ public class Main {
         numberOfYears = input.nextInt();
         System.out.print("Enter loan amount, for example, 120000.95: ");
         loanAmount = input.nextDouble();
-        Loan myloan = new Loan(interestRate, numberOfYears, loanAmount);
+        Loan myLoan = new Loan(interestRate, numberOfYears, loanAmount);
         System.out.format("The loan was created on %s.\n", date);
-        System.out.format("The monthly payment is $%.2f.\n", myloan.getMonthlyPayment());
-        System.out.format("The total payment is $%.2f.\n", myloan.getTotalPayment());
+        System.out.format("The monthly payment is $%.2f.\n", myLoan.getMonthlyPayment());
+        System.out.format("The total payment is $%.2f.\n", myLoan.getTotalPayment());
     }
 }
