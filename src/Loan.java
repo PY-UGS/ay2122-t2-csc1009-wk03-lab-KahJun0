@@ -4,13 +4,12 @@ public class Loan {
     private double annualInterestRate;
     private int numberOfYears;
     private double loanAmount;
-    private java.util.Date loanDate;
+    private java.util.Date loanDate = new java.util.Date();
 
     public Loan(double annualIR, int noYrs, double loanAmt) {
         this.annualInterestRate = annualIR;
         this.numberOfYears = noYrs;
         this.loanAmount = loanAmt;
-        this.loanDate = new java.util.Date();
     }
 
     public double getAnnualInterestRate() {
